@@ -1,16 +1,20 @@
-<mat-card class="example-card">
+<mat-card *ngFor = "let hotel of hoteles" class="example-card">
   <mat-card-header>
     <div mat-card-avatar>
-      <h1>Foto</h1>
+      <br>
+      <h1><img id = "foto" src={{hotel.foto}} /></h1>
+    </div>
+
+    <div  >
+      <mat-card-title>{{hotel.nombre}}
+      </mat-card-title>
+      <mat-card-subtitle>{{hotel.puntuacion}}</mat-card-subtitle>
+      
+      <i class="material-icons">streetview</i>
+      <mat-card-subtitle>{{hotel.ubicacion}}</mat-card-subtitle>
     </div>
 
     <div>
-      <mat-card-title>Hotel</mat-card-title>
-      <mat-card-subtitle>Estrellas</mat-card-subtitle>
-      <mat-card-subtitle>Ubicacion</mat-card-subtitle>
-    </div>
-
-    <div>
-      <mat-card-title>Precio</mat-card-title>
+      <mat-card-title>${{hotel.precioBase}}</mat-card-title>
     </div>
   </mat-card-header>
