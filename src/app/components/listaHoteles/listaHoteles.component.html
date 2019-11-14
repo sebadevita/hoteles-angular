@@ -1,9 +1,13 @@
+<div *ngFor="let hotel of hoteles" >
+<div  > 
 
-  <div  *ngFor = "let hotel of hoteles">
-    <app-hotel [hotel] = "hotel">
-
-    </app-hotel>
-
+  <mat-card style="display: flex; margin:5% 25%;" (click)="irADetalles(hotel.id)"> 
+      
+      <div class="card">
+        <app-hotel [hotel]="hotel"></app-hotel>
+      </div>
+      
+    </mat-card>
+    
   </div>
-  
-  
+</div>

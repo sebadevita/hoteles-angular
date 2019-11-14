@@ -1,6 +1,9 @@
 #logo{
     color:white;
-    text-decoration-line: none;
+}
+
+a{
+    text-decoration: none;
 }
 
 #logo:hover{

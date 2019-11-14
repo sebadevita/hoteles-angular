@@ -21,4 +21,8 @@ export class ListaHotelesComponent implements OnInit {
   async obtenerHoteles(){
     this.hoteles = await this.hotelService.obtenerHoteles()
   }
+
+  irADetalles(idSeleccionado: String){
+    this.router.navigate(['aplicacion/detallesHotel/'+ idSeleccionado])
+  }
 }

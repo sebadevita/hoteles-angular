@@ -18,26 +18,26 @@ export class DetallesComponent implements OnInit {
   habitaciones: string[] = ['Doble Económica', 'Doble Estandar', 'Triple Económica']
   servicios: string[] = ["Almuerzo", "Cena", "Cochera", "Lavandería"]
 
-  hotelSeleccionado: Hotel
+  hotelSeleccionado: Hotel = new Hotel()
 
 
   async ngOnInit() {
-    this.obtenerDetallesDelHotelDelService()
+    await this.obtenerDetallesDelHotel()
   }
 
-  obtenerDetallesDelHotel() {
+  async obtenerDetallesDelHotel() {
     this.route.params.subscribe(params => {
       this.hotelSeleccionado.id = params['id']
-      this.obtenerDetallesDelHotelDelService()
-
     })
-
- }
-
+    
+    await this.obtenerDetallesDelHotelDelService()
+    
+  }
+  
   async obtenerDetallesDelHotelDelService() {
-
-    this.hotelSeleccionado =await this.hotelService.obtenerDetallesDelHotel(this.hotelSeleccionado)
-
+    
+    this.hotelSeleccionado = await this.hotelService.obtenerDetallesDelHotel(this.hotelSeleccionado.id)
+   
   }
 
 }

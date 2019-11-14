@@ -18,8 +18,8 @@ async obtenerHoteles(): Promise<Hotel[]> {
   return await this.hoteles
 }
 
-async obtenerDetallesDelHotel(hotelBuscado: Hotel){
-  return await this.hoteles.find(hotel => hotel.id === hotelBuscado.id)
+async obtenerDetallesDelHotel(idBuscado: String){
+  return await this.hoteles.find(hotel => hotel.id === idBuscado)
 }
 
 
