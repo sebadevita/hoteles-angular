@@ -4,22 +4,19 @@ import { HotelesService } from 'src/app/services/hoteles.service';
 import { Hotel } from 'src/app/domain/hotel.domain';
 
 @Component({
-  selector: 'app-hoteles',
-  templateUrl: './hoteles.component.html',
-  styleUrls: ['./hoteles.component.css']
+  selector: 'app-hotel',
+  templateUrl: './hotel.component.html',
+  styleUrls: ['./hotel.component.css']
 })
-export class HotelesComponent implements OnInit {
+export class HotelComponent implements OnInit {
+
+  @Input()
+  hotel: Hotel
 
   constructor(private router: Router, public hotelService:HotelesService) { }
 
-  hoteles: Hotel[]
   
-  async ngOnInit(){
-    this.obtenerHoteles()
-  }
-
-  async obtenerHoteles(){
-    this.hoteles = await this.hotelService.obtenerHoteles()
+  ngOnInit(){
   }
 
 

@@ -7,8 +7,9 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms'
 
-import { HotelesComponent } from './components/hoteles/hoteles.component';
-import {DetallesComponent} from './components/detalles/detalles.component'
+import { HotelComponent } from './components/hotel/hotel.component';
+import { DetallesComponent } from './components/detalles/detalles.component';
+import {ListaHotelesComponent} from './components/listaHoteles/listaHoteles.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 
@@ -23,9 +24,10 @@ import { HeaderComponent } from './components/header/header.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HotelesComponent,
+    HotelComponent,
     HeaderComponent,
     DetallesComponent,
+    ListaHotelesComponent,
   ],
   imports: [
     BrowserModule,

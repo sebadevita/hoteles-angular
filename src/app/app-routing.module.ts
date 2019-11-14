@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
-import { HotelesComponent } from './components/hoteles/hoteles.component';
+import { HotelComponent } from './components/hotel/hotel.component';
 import { DetallesComponent } from './components/detalles/detalles.component';
+import { ListaHotelesComponent } from './components/listaHoteles/listaHoteles.component';
 
 
 export const routes: Routes = [
@@ -14,7 +15,7 @@ export const routes: Routes = [
     path: 'aplicacion', component: HeaderComponent,
 
     children: [
-      { path: 'hoteles', component: HotelesComponent },
+      { path: 'hoteles', component: ListaHotelesComponent },
       { path: 'detallesHotel', component: DetallesComponent },
 
     ]
@@ -32,6 +33,7 @@ export const routes: Routes = [
 export class AppRoutingModule { }
 export const routingComponents = [
   HeaderComponent,
-  HotelesComponent,
-  DetallesComponent
+  HotelComponent,
+  DetallesComponent,
+  ListaHotelesComponent,
 ];
