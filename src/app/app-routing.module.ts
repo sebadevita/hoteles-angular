@@ -16,7 +16,7 @@ export const routes: Routes = [
 
     children: [
       { path: 'hoteles', component: ListaHotelesComponent },
-      { path: 'detallesHotel', component: DetallesComponent },
+      { path: 'detallesHotel/:id', component: DetallesComponent },
 
     ]
 

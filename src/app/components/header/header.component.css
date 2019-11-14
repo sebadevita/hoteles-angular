@@ -1,0 +1,8 @@
+#logo{
+    color:white;
+    text-decoration-line: none;
+}
+
+#logo:hover{
+    color: lightgray;
+}
