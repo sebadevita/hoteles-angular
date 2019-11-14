@@ -1,3 +1,6 @@
+import { Servicio } from './servicio.domain';
+import { Habitacion } from './habitacion.domain';
+
 export class Hotel {
     
     constructor(
@@ -7,6 +10,9 @@ export class Hotel {
         public puntuacion?: number,
         public ubicacion?: string,
         public foto?: string,
+        public habitaciones?: Habitacion[],
+        public serviciosAdicionales?: Servicio[],
+
     ) { }
 
 }

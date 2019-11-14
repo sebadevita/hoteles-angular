@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Hotel } from 'src/app/domain/hotel.domain';
 import { HotelesService } from 'src/app/services/hoteles.service';
+import { Reserva } from 'src/app/domain/reserva.domain';
 
 @Component({
   selector: 'app-detalles',
@@ -15,10 +16,9 @@ export class DetallesComponent implements OnInit {
     public hotelService: HotelesService) { }
 
   habitacionSeleccionada: string;
-  habitaciones: string[] = ['Doble Económica', 'Doble Estandar', 'Triple Económica']
-  servicios: string[] = ["Almuerzo", "Cena", "Cochera", "Lavandería"]
 
-  hotelSeleccionado: Hotel = new Hotel()
+  posibleReserva: Reserva = new Reserva(new Hotel())
+
 
 
   async ngOnInit() {
@@ -27,17 +27,16 @@ export class DetallesComponent implements OnInit {
 
   async obtenerDetallesDelHotel() {
     this.route.params.subscribe(params => {
-      this.hotelSeleccionado.id = params['id']
+    this.posibleReserva.hotel.id = params.id
     })
-    
+
     await this.obtenerDetallesDelHotelDelService()
-    
+
   }
-  
-  async obtenerDetallesDelHotelDelService() {
-    
-    this.hotelSeleccionado = await this.hotelService.obtenerDetallesDelHotel(this.hotelSeleccionado.id)
-   
+
+  async obtenerDetallesDelHotelDelService(): Promise<void> {
+    this.posibleReserva.hotel = await this.hotelService.obtenerDetallesDelHotel(this.posibleReserva.hotel.id)
+
   }
 
 }

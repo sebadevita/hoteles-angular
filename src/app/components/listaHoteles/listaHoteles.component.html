@@ -1,7 +1,7 @@
 <div *ngFor="let hotel of hoteles" >
 <div  > 
 
-  <mat-card style="display: flex; margin:5% 25%;" (click)="irADetalles(hotel.id)"> 
+  <mat-card class="mat-elevation-z11" style="display: flex; margin:5% 25%;" (click)="irADetalles(hotel.id)"> 
       
       <div class="card">
         <app-hotel [hotel]="hotel"></app-hotel>
