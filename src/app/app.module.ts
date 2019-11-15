@@ -12,6 +12,8 @@ import { DetallesComponent } from './components/detalles/detalles.component';
 import {ListaHotelesComponent} from './components/listaHoteles/listaHoteles.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
+import {ReservaComponent} from './components/reserva/reserva.component'
+import {ListaReservasComponent} from './components/listaReservas/listaReservas.component'
 
 
 
@@ -28,6 +30,8 @@ import { HeaderComponent } from './components/header/header.component';
     HeaderComponent,
     DetallesComponent,
     ListaHotelesComponent,
+    ReservaComponent,
+    ListaReservasComponent,
   ],
   imports: [
     BrowserModule,

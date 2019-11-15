@@ -6,6 +6,7 @@ export class Cliente {
 
     constructor(
         public id?: string,
+        public username?: string,
         reservas_?: Reserva[],
     ) { 
 

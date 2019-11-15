@@ -1,0 +1,11 @@
+<div *ngFor="let reserva of reservas">
+
+    <mat-card id="carta" class="mat-elevation-z11" style="display: flex; margin:5% 25%;" (click)="irADetalles(hotel.id)">
+        
+        <div>
+            <app-reserva [reserva]="reserva"></app-reserva>
+          </div>
+            
+          </mat-card>
+          
+  </div>

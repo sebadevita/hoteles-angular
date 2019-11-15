@@ -4,6 +4,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { HotelComponent } from './components/hotel/hotel.component';
 import { DetallesComponent } from './components/detalles/detalles.component';
 import { ListaHotelesComponent } from './components/listaHoteles/listaHoteles.component';
+import { ListaReservasComponent } from './components/listaReservas/listaReservas.component';
+import { ReservaComponent } from './components/reserva/reserva.component';
 
 
 export const routes: Routes = [
@@ -17,6 +19,8 @@ export const routes: Routes = [
     children: [
       { path: 'hoteles', component: ListaHotelesComponent },
       { path: 'detallesHotel/:id', component: DetallesComponent },
+      { path: 'misReservas', component: ListaReservasComponent },
+
 
     ]
 
@@ -36,4 +40,6 @@ export const routingComponents = [
   HotelComponent,
   DetallesComponent,
   ListaHotelesComponent,
+  ReservaComponent,
+  ListaReservasComponent,
 ];

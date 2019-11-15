@@ -1,13 +1,21 @@
 
-<div  >
+<div >
+    
+    <mat-toolbar style="display:flex;" color="primary" id="logo">
     <a [routerLink]="'/aplicacion/hoteles'" >
-        
-        <mat-toolbar color="primary" id="logo">
             <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon><p>EH!</p>
             
-        </mat-toolbar>
-    </a>
-    
+        
+        </a>
+            <div style="margin-left: 50%;">
+
+                <a [routerLink] = "'/aplicacion/misReservas'">  
+                    {{clienteService.cliente.username}}
+                </a>
+        </div>
+    </mat-toolbar>
+        
+        
 </div>
 
 <router-outlet></router-outlet>

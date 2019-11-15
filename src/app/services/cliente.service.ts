@@ -9,10 +9,19 @@ export class ClienteService {
 
 constructor() { }
 
-cliente: Cliente = new Cliente()
+cliente: Cliente = new Cliente("C1", "Sebastián", [])
 
 async agregarReserva(nuevaReserva: Reserva): Promise <void>{
   return await this.cliente.agregarReserva(nuevaReserva)
+}
+
+async obtenerClienteLogueado(){
+  return await this.cliente
+}
+
+async obtenerReservasDelCliente(){
+  return await this.cliente.reservas
+
 }
 
 }
