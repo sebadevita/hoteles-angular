@@ -26,24 +26,40 @@ export class Reserva {
 
 
     calcularTotal(): number{
-        console.log("LO QUE ESTOY IMPRIMIENDO")
-        console.log(this)
-        return this.precioPorHabitacion() 
-    
-    // + this.precioPorServicios()) * this.cantidadDeDias()
+        return (this.precioPorHabitacion() + this.precioPorServicios()) * this.cantidadDeDias()
       
 }
       
       precioPorHabitacion(){
-        return this.habitacion.precio
+          if(this.habitacion){
+             return this.habitacion.precio
+            }
+
+            return 0
       }
       
       precioPorServicios(){
-        return this.servicios.reduce((total, servicio) => total + servicio.precio, 0)
+          if (this.servicios){
+
+              return this.servicios.reduce((total, servicio) => total + servicio.precio, 0)
+            }
+
+            return 0
       }
       
       cantidadDeDias(){
-        return 2
+          if (this.fechaDesde && this.fechaHasta){
+              
+              
+              var diferencia = Math.abs(this.fechaHasta.getTime() - this.fechaDesde.getTime());
+              var diferenciaEnDias = Math.ceil(diferencia / (1000 * 3600 * 24));  
+              console.log(diferenciaEnDias)
+              return diferenciaEnDias
+
+          }
+
+          return 0
+
         
 
   

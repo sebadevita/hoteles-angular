@@ -22,6 +22,8 @@ export class DetallesComponent implements OnInit {
 
   posibleReserva: Reserva = new Reserva(new Hotel())
   variable: number
+  minDate = new Date()
+
 
 
   async ngOnInit() {
@@ -38,6 +40,7 @@ export class DetallesComponent implements OnInit {
   }
 
   async obtenerDetallesDelHotelDelService(): Promise<void> {
+  
     this.posibleReserva.hotel = await this.hotelService.obtenerDetallesDelHotel(this.posibleReserva.hotel.id) 
   }
 

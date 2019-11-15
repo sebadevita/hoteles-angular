@@ -29,9 +29,13 @@ export class Hotel {
     }
 
     precioDeLasHabitaciones(): number[]{
+    if(this.habitaciones){
+
         return this.habitaciones.map((habitacion) => {
             return habitacion.precio
         })
+    }
+    return [0]
 
     }
 
