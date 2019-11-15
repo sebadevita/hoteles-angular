@@ -1,6 +1,6 @@
 export class Habitacion {
     
-    precio: number = 41
+    precio: number = 0
 
     constructor(
         public id?: string,

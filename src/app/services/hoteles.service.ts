@@ -26,15 +26,15 @@ export class HotelesService {
 
   lasHayas = new Hotel("H1",
     "Las Hayas Resort",
-    5500, 5, "Usuahia",
+    5, 
+    "Usuahia",
     "https://imgur.com/e4bgsX2.jpg",
     [this.simple, this.dobleEconomica, this.dobleEstandard, this.tripleEconomica,],
     [this.almuerzo, this.cena, this.lavanderia, this.cochera],
   )
   laCaldera = new Hotel("H2",
     "Hosteria La Caldera",
-    3000,
-    3,
+     3,
     "Salta",
     "https://imgur.com/Sh2wg91.jpg",
     [this.dobleEconomica, this.dobleEstandard, this.tripleEconomica],
@@ -42,7 +42,6 @@ export class HotelesService {
   )
   villaHuapi = new Hotel("H3",
     "Villa Huapi",
-    4000,
     4,
     "Bariloche",
     "https://imgur.com/jJqf9f5.jpg",

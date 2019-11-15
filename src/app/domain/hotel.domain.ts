@@ -9,7 +9,6 @@ export class Hotel {
     constructor(
         public id?: string,
         public nombre?: string,
-        public precioBase?: number,
         public puntuacion?: number,
         public ubicacion?: string,
         public foto?: string,
@@ -25,8 +24,15 @@ export class Hotel {
 
     // ademas el hotel ya no deberia tener precio
 
-    // precioMin(){
-    //     Math.min(this.habitaciones.map(habitacion.precio)
-    // }
+    precioMin(){
+        return Math.min(...this.precioDeLasHabitaciones())
+    }
+
+    precioDeLasHabitaciones(): number[]{
+        return this.habitaciones.map((habitacion) => {
+            return habitacion.precio
+        })
+
+    }
 
 }
