@@ -10,9 +10,14 @@ export class HotelesService {
 
   constructor() { }
 
+  //REVISAR EL TEMA DE LOS PRECIOS DE LAS HABITACIONES DESPENDIENDO DEL HOTEL
+
   dobleEconomica = new Habitacion("Hab1", "Doble Económica", 4000)
   dobleEstandard = new Habitacion("Hab2", "Doble Estandard", 5000)
   tripleEconomica = new Habitacion("Hab3", "Triple Económica", 6000)
+
+  simple = new Habitacion("Hab4", "Simple Economica", 2000)
+
 
   almuerzo = new Servicio("S1", "Almuerzo", 400)
   cena = new Servicio("S2", "Cena", 500)
@@ -23,7 +28,7 @@ export class HotelesService {
     "Las Hayas Resort",
     5500, 5, "Usuahia",
     "https://imgur.com/e4bgsX2.jpg",
-    [this.dobleEconomica, this.dobleEstandard, this.tripleEconomica],
+    [this.simple, this.dobleEconomica, this.dobleEstandard, this.tripleEconomica,],
     [this.almuerzo, this.cena, this.lavanderia, this.cochera],
   )
   laCaldera = new Hotel("H2",

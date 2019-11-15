@@ -13,4 +13,6 @@ export class Habitacion {
             this.precio = precio_
         }    }
 
+
+            
 }

@@ -13,7 +13,7 @@ export class Hotel {
         public puntuacion?: number,
         public ubicacion?: string,
         public foto?: string,
-         habitaciones_?: Habitacion[],
+        habitaciones_?: Habitacion[],
         public serviciosAdicionales?: Servicio[],
 
     ) { 
@@ -22,5 +22,11 @@ export class Hotel {
 
 
     }
+
+    // ademas el hotel ya no deberia tener precio
+
+    // precioMin(){
+    //     Math.min(this.habitaciones.map(habitacion.precio)
+    // }
 
 }
