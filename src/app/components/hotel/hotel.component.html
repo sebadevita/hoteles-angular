@@ -7,17 +7,22 @@
 
 
   <div style="margin-left: 5%;">
-    <h1 style="white-space: nowrap;">{{hotel.nombre}}</h1>
+    <h1 class = "nombre">{{hotel.nombre}}</h1>
     <h2>{{hotel.puntuacion}}</h2>
 
     <div style="display: flex;" >
-      <i class="material-icons" style="margin-top:8%;">room</i>
-      <h2>{{hotel.ubicacion}}</h2>
+      <div>
+        <i class="material-icons" style="margin-top:8%;">room</i>
+      </div>
+
+      <div style="margin-top: 3%">
+        <h2 class="ubicacion">  {{hotel.ubicacion}}</h2>
+      </div>
     </div>
   </div>
 
   <div>
-    <h2 style="margin-left: 100%;">${{hotel.precioMin()}}</h2>
+    <h2 class="precio">${{hotel.precioMin()}}</h2>
   </div>
 
 </div>

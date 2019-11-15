@@ -1,13 +1,11 @@
-<div *ngFor="let hotel of hoteles" >
-<div  > 
+<div *ngFor="let hotel of hoteles">
 
-  <mat-card class="mat-elevation-z11" style="display: flex; margin:5% 25%;" (click)="irADetalles(hotel.id)"> 
+  <mat-card id="carta" class="mat-elevation-z11" style="display: flex; margin:5% 25%;" (click)="irADetalles(hotel.id)">
       
-      <div class="card">
-        <app-hotel [hotel]="hotel"></app-hotel>
-      </div>
-      
-    </mat-card>
-    
-  </div>
+      <div>
+          <app-hotel [hotel]="hotel"></app-hotel>
+        </div>
+          
+        </mat-card>
+        
 </div>

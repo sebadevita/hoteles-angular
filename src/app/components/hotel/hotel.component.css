@@ -2,3 +2,18 @@
     max-width: 6em;
     max-height: 6em;
 }
+
+.nombre{
+    white-space: nowrap;
+    font-size: 1.5em;
+}
+
+.ubicacion{
+    font-size: 1em
+}
+
+.precio{
+    margin-left: 100%;
+    font-size: 1.5em;
+}
+
