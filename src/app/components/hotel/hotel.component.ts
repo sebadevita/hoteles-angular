@@ -16,8 +16,11 @@ export class HotelComponent implements OnInit {
   constructor(private router: Router, public hotelService:HotelesService) { }
 
   
-  ngOnInit(){
+  ngOnInit(){}
+
+  precioMin(){
   }
+
 
 
 
