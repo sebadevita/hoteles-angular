@@ -4,14 +4,12 @@ import { Servicio } from './servicio.domain';
 
 export class Reserva {
 
-    habitacion: Habitacion = new Habitacion()
-    
     constructor(
         public hotel?: Hotel,
         public id?: string,
         public fechaDesde?: Date,
         public fechaHasta?: Date,
-        habitacion_?: Habitacion,      
+        public habitacion?: Habitacion,
         public servicios?: Servicio[],
         public precioFinal?: number,
 
@@ -19,49 +17,90 @@ export class Reserva {
 
     ) {
 
-        if(habitacion_){
-            this.habitacion = habitacion_
+    }
+
+
+    calcularTotal(): number {
+
+        if (this.cantidadDeDias() < 0){
+            return 0
+
+        }
+
+        return (this.precioPorHabitacion() + this.precioPorServicios()) * this.cantidadDeDias()
+
+    }
+
+    validarErrores() {
+        this.validarHabitacion()
+        this.validarFechasVacias()
+        this.validarFechaDesdePosteriorFechaHasta()
+    }
+
+
+    validarFechasVacias() {
+
+        if (!this.fechaDesde) {
+            throw new Error('¡El campo "fecha desde" debe contener una fecha! ')
+        }
+
+        if (!this.fechaHasta) {
+            throw new Error('¡El campo "fecha hasta" debe contener una fecha! ')
         }
     }
 
+    validarFechaDesdePosteriorFechaHasta(){
+        if(this.cantidadDeDias() < 0){
+            throw new Error('¡El campo "fecha desde" debe ser anterior al campo "fecha hasta"!')
 
-    calcularTotal(): number{
-        return (this.precioPorHabitacion() + this.precioPorServicios()) * this.cantidadDeDias()
-      
-}
-      
-      precioPorHabitacion(){
-          if(this.habitacion){
-             return this.habitacion.precio
-            }
+        }
 
-            return 0
-      }
-      
-      precioPorServicios(){
-          if (this.servicios){
-
-              return this.servicios.reduce((total, servicio) => total + servicio.precio, 0)
-            }
-
-            return 0
-      }
-      
-      cantidadDeDias(){
-          if (this.fechaDesde && this.fechaHasta){
-              
-              
-              var diferencia = Math.abs(this.fechaHasta.getTime() - this.fechaDesde.getTime());
-              var diferenciaEnDias = Math.ceil(diferencia / (1000 * 3600 * 24));  
-              console.log(diferenciaEnDias)
-              return diferenciaEnDias
-
-          }
-
-          return 0
-
-        
-
-  
     }
-     }
+
+
+
+    validarHabitacion() {
+        if (!this.habitacion) {
+            throw new Error("¡Debe seleccionar un tipo de habitación para reservar!")
+        }
+
+    }
+
+    validarDias() {
+
+    }
+
+    precioPorHabitacion() {
+        if (this.habitacion) {
+            return this.habitacion.precio
+        }
+
+        return 0
+    }
+
+    precioPorServicios() {
+        if (this.servicios) {
+
+            return this.servicios.reduce((total, servicio) => total + servicio.precio, 0)
+        }
+
+        return 0
+    }
+
+    cantidadDeDias() {
+        if (this.fechaDesde && this.fechaHasta) {
+
+
+            var diferencia = this.fechaHasta.getTime() - this.fechaDesde.getTime();
+            var diferenciaEnDias = Math.ceil(diferencia / (1000 * 3600 * 24));
+            return diferenciaEnDias
+
+        }
+
+        return 0
+
+
+
+
+    }
+}

@@ -7,7 +7,7 @@
 
       <mat-card-title>Habitaciones:</mat-card-title>
 
-      <mat-radio-group class="enColumna" [(ngModel)]="posibleReserva.habitacion"  >
+      <mat-radio-group class="enColumna" [(ngModel)]="posibleReserva.habitacion">
         <mat-radio-button class="radio-button" *ngFor="let habitacion of posibleReserva.hotel.habitaciones"
           [value]="habitacion">
           {{habitacion.tipo}}
@@ -29,7 +29,7 @@
       <mat-card-title>Servicios Adicionales:</mat-card-title>
 
       <mat-selection-list [(ngModel)]="posibleReserva.servicios">
-        
+
         <div class="enColumna">
           <mat-list-option *ngFor="let servicio of posibleReserva.hotel.serviciosAdicionales" [value]="servicio">
             {{servicio.tipo}}
@@ -47,33 +47,46 @@
 
   <br>
 
+  <div *ngIf="cartelTodoBien">
+    <div class="alert alert-success">
+      {{cartelTodoBien}}
+    </div>
+  </div>
+
+  <div *ngIf="cartelError">
+    <div class="alert alert-danger">
+      {{cartelError}}
+    </div>
+  </div>
+
+
   <mat-card class="mat-elevation-z5" style="margin: 0.5% 3%">
     <div class="horizontal">
       <div>
         <mat-form-field class="example-full-width">
-            <label>Desde: </label>
-              <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" 
-              placeholder="Fecha desde..."
-              [(ngModel)]="posibleReserva.fechaDesde">
-              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>
+          <label>Desde: </label>
+          <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Fecha desde..."
+            [(ngModel)]="posibleReserva.fechaDesde">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
 
         <br>
         <mat-form-field class="example-full-width">
-            <label>Hasta: </label>
-              <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker2"
-              [(ngModel)]="posibleReserva.fechaHasta"  
-              placeholder="Fecha hasta...">
-              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-              <mat-datepicker #picker2></mat-datepicker>
-            </mat-form-field>
+          <label>Hasta: </label>
+          <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker2"
+            [(ngModel)]="posibleReserva.fechaHasta" placeholder="Fecha hasta...">
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
       </div>
 
       <h4>${{posibleReserva.calcularTotal()}}</h4>
 
-
-      <button class="boton" mat-raised-button color="primary">Reservar</button>
+      <button class="boton" mat-raised-button color="primary" (click)="agregarReservaAlCliente()">Reservar</button>
     </div>
   </mat-card>
+
+
+
 </div>
