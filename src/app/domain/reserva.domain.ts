@@ -50,7 +50,7 @@ export class Reserva {
     }
 
     validarFechaDesdePosteriorFechaHasta(){
-        if(this.cantidadDeDias() < 0){
+        if(this.cantidadDeDias() <= 0){
             throw new Error('¡El campo "fecha desde" debe ser anterior al campo "fecha hasta"!')
 
         }

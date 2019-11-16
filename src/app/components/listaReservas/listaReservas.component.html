@@ -1,11 +1,23 @@
 <div *ngFor="let reserva of reservas">
 
-    <mat-card id="carta" class="mat-elevation-z11" style="display: flex; margin:5% 25%;" (click)="irADetalles(hotel.id)">
-        
+    <mat-card id="carta" class="mat-elevation-z11" style="display: flex; margin:5% 25%;"
+        (click)="irADetalles(hotel.id)">
+
         <div>
-            <app-reserva [reserva]="reserva"></app-reserva>
-          </div>
-            
-          </mat-card>
-          
-  </div>
+            <app-hotel [hotel]="reserva.hotel"></app-hotel>
+        </div>
+
+        <div style="margin-top: 7%; position: relative; right: 6em;">
+            <p style = "white-space: nowrap;">
+                {{reserva.fechaDesde | date:'dd-MM-yyyy'}} / {{reserva.fechaHasta | date:'dd-MM-yyyy'}}
+                
+                
+            </p>
+            {{reserva.cantidadDeDias()}} día/s
+            {{reserva.calcularTotal()}}
+
+        </div>
+
+    </mat-card>
+
+</div>

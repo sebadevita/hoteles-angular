@@ -5,7 +5,6 @@ import { HotelComponent } from './components/hotel/hotel.component';
 import { DetallesComponent } from './components/detalles/detalles.component';
 import { ListaHotelesComponent } from './components/listaHoteles/listaHoteles.component';
 import { ListaReservasComponent } from './components/listaReservas/listaReservas.component';
-import { ReservaComponent } from './components/reserva/reserva.component';
 
 
 export const routes: Routes = [
@@ -40,6 +39,5 @@ export const routingComponents = [
   HotelComponent,
   DetallesComponent,
   ListaHotelesComponent,
-  ReservaComponent,
   ListaReservasComponent,
 ];

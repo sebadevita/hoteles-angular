@@ -9,11 +9,10 @@ import { FormsModule } from '@angular/forms'
 
 import { HotelComponent } from './components/hotel/hotel.component';
 import { DetallesComponent } from './components/detalles/detalles.component';
-import {ListaHotelesComponent} from './components/listaHoteles/listaHoteles.component'
+import { ListaHotelesComponent } from './components/listaHoteles/listaHoteles.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
-import {ReservaComponent} from './components/reserva/reserva.component'
-import {ListaReservasComponent} from './components/listaReservas/listaReservas.component'
+import { ListaReservasComponent } from './components/listaReservas/listaReservas.component'
 
 
 
@@ -30,7 +29,6 @@ import { HeaderComponent } from './components/header/header.component';
     HeaderComponent,
     DetallesComponent,
     ListaHotelesComponent,
-    ReservaComponent,
     ListaReservasComponent,
   ],
   imports: [
