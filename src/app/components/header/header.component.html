@@ -1,17 +1,29 @@
 
-<div >
+<div>
     
-    <mat-toolbar style="display:flex;" color="primary" id="logo">
-    <a [routerLink]="'/aplicacion/hoteles'" >
-            <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon><p>EH!</p>
-            
-        
-        </a>
-            <div style="margin-left: 50%;">
+   <mat-toolbar class= "barra" color="primary">
 
-                <a [routerLink] = "'/aplicacion/misReservas'">  
-                    {{clienteService.cliente.username}}
+
+       <a [routerLink]="'/aplicacion/hoteles'" class= "logo" >
+           <div>
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" id = "iconoCasa">home</mat-icon> 
+
+                    </div>
+                    
+                    <div>
+                        <p>EH!</p>  
+
+                    </div>
+                    
                 </a>
+            
+            <div class = "reservas">
+                <div>
+                    
+                    <a [routerLink] = "'/aplicacion/misReservas'">
+                        {{clienteService.cliente.username}} - Mis Reservas <p> </p>
+                    </a>
+                </div>
         </div>
     </mat-toolbar>
         

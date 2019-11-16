@@ -1,11 +1,28 @@
-#logo{
-    color:white;
-}
-
 a{
     text-decoration: none;
+    color: white
+    }
+
+a:hover{
+    color: lightgray;
+    text-decoration: none;
+}    
+
+ .reservas{
+    margin-left: 75%;
+    margin-top: 1%
+} 
+
+.barra{
+    display: flex;
 }
 
-#logo:hover{
-    color: lightgray;
+.logo{
+    display: flex;
+    margin-top: 1.5%
+
+}
+
+#iconoCasa{
+    margin-top: 15%
 }

@@ -1,7 +1,12 @@
 .enColumna {
     display: flex;
     flex-direction: column;
-    margin: 15px 0;
+  }
+
+  .habitaciones {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
   }
   
   .radio-button {
@@ -19,11 +24,16 @@
   .boton{
       height: 10%;
       margin-top: 5%;
-      margin-right: 3%;
-      padding-right: 4%
+      margin-left: 30%;
 }
 
 .card{
   box-shadow: 10px 10px 10px black;
+
+}
+
+.precioTotal{
+margin-left: 200%;
+margin-top: 120%
 
 }

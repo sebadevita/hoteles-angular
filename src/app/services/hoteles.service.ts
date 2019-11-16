@@ -17,12 +17,14 @@ export class HotelesService {
   tripleEconomica = new Habitacion("Hab3", "Triple Económica", 6000)
 
   simple = new Habitacion("Hab4", "Simple Economica", 2000)
+  luxurie = new Habitacion("Hab5", "Luxurie", 7000)
 
 
   almuerzo = new Servicio("S1", "Almuerzo", 400)
   cena = new Servicio("S2", "Cena", 500)
   cochera = new Servicio("S3", "Cochera", 700)
   lavanderia = new Servicio("S4", "Lavandería", 300)
+  desayuno = new Servicio("S5", "Desayuno", 300)
 
   lasHayas = new Hotel("H1",
     "Las Hayas Resort",
