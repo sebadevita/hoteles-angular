@@ -13,21 +13,21 @@ export class HotelComponent implements OnInit {
   @Input()
   hotel: Hotel
 
+  
+
   constructor(private router: Router, public hotelService:HotelesService) { }
 
-  
+
+
   ngOnInit(){}
 
-  precioMin(){
+  getEstrellas() {
+    return Array.from(new Array(this.hotel.puntuacion), (x, i) => i + 1)
   }
 
 
 
 
-  // async ngOnInit() {
-  //   this.hoteles = await this.hotelService.obtenerHoteles()
-
-  // }
 
 
 

@@ -17,3 +17,12 @@
     font-size: 1.5em;
 }
 
+.enColumna {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #estrella{
+      color:#D6CD3F;
+      display: flex
+  }

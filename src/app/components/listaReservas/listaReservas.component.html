@@ -7,15 +7,23 @@
             <app-hotel [hotel]="reserva.hotel"></app-hotel>
         </div>
 
-        <div style="margin-top: 7%; position: relative; right: 6em;">
+        <div style="margin-top: 5.8%; position: relative; right: 5em;">
             <p style = "white-space: nowrap;">
                 {{reserva.fechaDesde | date:'dd-MM-yyyy'}} / {{reserva.fechaHasta | date:'dd-MM-yyyy'}}
                 
                 
             </p>
-            {{reserva.cantidadDeDias()}} día/s
-            {{reserva.calcularTotal()}}
+            
+            <p style="margin-left: 45%;">
+                {{reserva.cantidadDeDias()}} día/s
 
+            </p>
+            
+            
+            <h4>
+                Precio Final: ${{reserva.calcularTotal()}}
+
+            </h4>
         </div>
 
     </mat-card>
