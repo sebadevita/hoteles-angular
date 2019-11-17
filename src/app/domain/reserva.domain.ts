@@ -107,7 +107,7 @@ export class Reserva {
     }
 
     cantidadDiasParaElDiaDeReserva(): number{
-        var diferencia = new Date().getTime() - this.fechaDesde.getTime()
+        var diferencia = this.fechaDesde.getTime() - new Date().getTime()
         var diferenciaEnDias = Math.ceil(diferencia/(1000*3600*24))
         return Math.abs(diferenciaEnDias)
     }
