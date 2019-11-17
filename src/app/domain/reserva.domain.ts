@@ -1,6 +1,7 @@
 import { Habitacion } from './habitacion.domain';
 import { Hotel } from './hotel.domain';
 import { Servicio } from './servicio.domain';
+import { ThrowStmt } from '@angular/compiler';
 
 export class Reserva {
 
@@ -98,9 +99,17 @@ export class Reserva {
         }
 
         return 0
+}
 
+    esCancelable() :boolean{
+     
+        return this.cantidadDiasParaElDiaDeReserva() >= 7
+    }
 
-
-
+    cantidadDiasParaElDiaDeReserva(): number{
+        var diferencia = new Date().getTime() - this.fechaDesde.getTime()
+        var diferenciaEnDias = Math.ceil(diferencia/(1000*3600*24))
+        console.log(diferenciaEnDias)
+        return Math.abs(diferenciaEnDias)
     }
 }

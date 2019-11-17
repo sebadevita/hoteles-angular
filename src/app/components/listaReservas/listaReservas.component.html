@@ -24,6 +24,16 @@
                 Precio Final: ${{reserva.calcularTotal()}}
 
             </h4>
+
+            <div *ngIf=reserva.esCancelable()>
+                <div style="margin-left: 80%;">
+
+                    <button mat-raised-button color="warn">Cancelar</button>
+                </div>
+
+
+            </div>            
+
         </div>
 
     </mat-card>
