@@ -24,4 +24,8 @@ async obtenerReservasDelCliente(){
 
 }
 
+async cancelarReserva(reserva: Reserva){
+ return await this.cliente.cancelarReserva(reserva)
+}
+
 }

@@ -24,6 +24,8 @@ export class DetallesComponent implements OnInit {
   habitacionSeleccionada: string;
 
   posibleReserva: Reserva = new Reserva(new Hotel())
+  
+  
   variable: number
   minDate = new Date()
   cartelTodoBien: String
@@ -59,13 +61,13 @@ export class DetallesComponent implements OnInit {
       this.posibleReserva.validarErrores()
       await this.clienteService.agregarReserva(this.posibleReserva)
       this.cartelTodoBien = "¡Tu reserva fue realizada exitosamente!"
+      
     } catch (error) {
       this.cartelError = error.message
     }
-
-
-
-
+    
+    this.posibleReserva = new Reserva(new Hotel())
+    this.obtenerDetallesDelHotel()
   }
 }
 

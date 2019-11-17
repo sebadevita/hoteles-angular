@@ -8,18 +8,29 @@ export class Cliente {
         public id?: string,
         public username?: string,
         reservas_?: Reserva[],
-    ) { 
+    ) {
 
-        if (reservas_){
+        if (reservas_) {
             this.reservas = reservas_
         }
 
     }
 
     agregarReserva(nuevaReserva: Reserva) {
+
+
+        this.reservas.push(nuevaReserva)
         
 
-            this.reservas.push(nuevaReserva)
+    }
+
+    cancelarReserva(reserva: Reserva) {
+
+
+        const index = this.reservas.indexOf(reserva, 0);
+        if (index > -1) {
+            this.reservas.splice(index, 1);
+        }
 
     }
 }

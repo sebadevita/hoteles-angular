@@ -23,4 +23,8 @@ export class ListaReservasComponent implements OnInit {
      
   }
 
+  async cancelarReservaDelCliente(reserva: Reserva){
+    await this.clienteService.cancelarReserva(reserva)
+  }
+
 }

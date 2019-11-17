@@ -2,8 +2,18 @@
 
   <mat-card id="carta" class="mat-elevation-z11" style="display: flex; margin:5% 25%;" (click)="irADetalles(hotel.id)">
       
-      <div>
-          <app-hotel [hotel]="hotel"></app-hotel>
+      <div style="display: flex">
+          <app-hotel  [hotel]="hotel"></app-hotel>
+          
+        </div>
+
+        <div>
+            <div style = "margin-left: 80%">
+              <h4>
+                  ${{hotel.precioMin()}}
+
+              </h4>
+              </div>
         </div>
           
         </mat-card>
