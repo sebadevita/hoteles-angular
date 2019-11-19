@@ -7,29 +7,31 @@
             <app-hotel [hotel]="reserva.hotel"></app-hotel>
         </div>
 
-        <div style="margin-top: 5.8%; position: relative; right: 1.5em;">
+        <div style="margin-top: 5.8%; position: relative;">
             <p style="white-space: nowrap;">
                 {{reserva.fechaDesde | date:'dd-MM-yyyy'}} / {{reserva.fechaHasta | date:'dd-MM-yyyy'}}
 
 
             </p>
 
-            <p style="margin-left: 45%; position: relative; right: 1.5em; bottom: 1em">
+            <p style="margin-left: 45%; position: relative; right: 1.5em; bottom: 1em;">
                 {{reserva.cantidadDeDias()}} noche/s
 
             </p>
 
 
-            <h4>
-                <div style ="margin-left: 45%; position: relative; right: 1.5em; bottom: 1em">
-                    ${{reserva.calcularTotal()}}
-
-                </div>
-
-            </h4>
+         <div>
+                <h4>
+                        <div style ="margin-left: 45%; position: relative; right: 1.5em; bottom: 1em">
+                            ${{reserva.calcularTotal()}}
+        
+                        </div>
+        
+                    </h4>
+         </div>
 
             <div *ngIf=reserva.esCancelable()>
-                <div style="margin-left: 80%;">
+                <div style="margin-left: 50%;">
 
                     <div>
                         <button mat-raised-button color="warn" (click)="cancelarReservaDelCliente(reserva)">

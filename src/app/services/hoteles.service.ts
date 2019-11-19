@@ -47,11 +47,11 @@ export class HotelesService {
     4,
     "Bariloche",
     "https://imgur.com/jJqf9f5.jpg",
-    [this.dobleEconomica, this.dobleEstandard, this.tripleEconomica],
+    [this.dobleEstandard, this.tripleEconomica, this.luxurie],
     [this.almuerzo, this.cena, this.lavanderia, this.cochera],
   )
 
-  hoteles = [this.lasHayas, this.villaHuapi, this.laCaldera]
+  hoteles = [this.lasHayas, this.laCaldera, this.villaHuapi]
 
 
 
